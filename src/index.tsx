@@ -112,7 +112,6 @@ const BottomSheet = React.memo(
 
     const context = useSharedValue({ y: 0 });
     const gesture = Gesture.Pan()
-      .runOnJS(true)
       .onStart(() => {
         context.value = { y: translateY.value };
       })
@@ -121,11 +120,10 @@ const BottomSheet = React.memo(
         translateY.value = Math.max(translateY.value, -heightLayout.value);
       })
       .onEnd(() => {
-        const HEIGHT = heightLayout.value;
-        if (translateY.value > -HEIGHT / 2.5) {
-          runOnJS(scrollTo)(0);
+        if (translateY.value > -heightLayout.value / 2.5) {
+          scrollTo(0);
         } else {
-          runOnJS(scrollTo)(HEIGHT);
+          scrollTo(heightLayout.value);
         }
       });
 
@@ -194,7 +192,7 @@ const BottomSheet = React.memo(
           onPress={() => scrollTo(0)}
         />
         <GestureDetector gesture={gesture}>
-          <Animated.ScrollView
+          <Animated.View
             style={[
               styles.bottomSheetContainer,
               bottomSheetStyle,
@@ -223,7 +221,7 @@ const BottomSheet = React.memo(
               ]}
             />
             {props.children}
-          </Animated.ScrollView>
+          </Animated.View>
         </GestureDetector>
       </React.Fragment>
     );
