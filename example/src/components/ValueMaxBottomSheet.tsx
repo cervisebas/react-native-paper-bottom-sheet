@@ -22,7 +22,7 @@ export default forwardRef(function (
       maxHeight={Number(props.valueMax)}
     >
       <View style={styles.contentBottomSheet}>
-        <Text>Hello</Text>
+        <Text>Hello world!!</Text>
       </View>
     </BottomSheet>
   );

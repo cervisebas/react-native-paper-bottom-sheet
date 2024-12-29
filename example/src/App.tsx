@@ -7,6 +7,7 @@ import NormalBottomSheet from './components/NormalBottomSheet';
 import ValueBottomSheet from './components/ValueBottomSheet';
 import ValueMaxBottomSheet from './components/ValueMaxBottomSheet';
 import InputBottomSheet from './components/InputBottomSheet';
+import ScrollBottomSheet from './components/ScrollBottomSheet';
 
 export default function App() {
   const [valueDp, setValueDp] = useState('300');
@@ -18,6 +19,7 @@ export default function App() {
   const refBottomSheetValue = useRef<BottomSheetRef>(null);
   const refBottomSheetValueMax = useRef<BottomSheetRef>(null);
   const refBottomSheetInput = useRef<BottomSheetRef>(null);
+  const refBottomSheetScroll = useRef<BottomSheetRef>(null);
 
   return (
     <PaperProvider>
@@ -28,7 +30,7 @@ export default function App() {
             mode={'contained'}
             onPress={() => refBottomSheetNormal.current?.expand()}
           >
-            Abrir normal
+            Open normally
           </Button>
 
           <Divider style={styles.divider} />
@@ -48,7 +50,7 @@ export default function App() {
               Keyboard.dismiss();
             }}
           >
-            Abrir
+            Open
           </Button>
 
           <Divider style={styles.divider} />
@@ -75,7 +77,7 @@ export default function App() {
               Keyboard.dismiss();
             }}
           >
-            Abrir
+            Open
           </Button>
 
           <Divider style={styles.divider} />
@@ -84,7 +86,16 @@ export default function App() {
             mode={'contained'}
             onPress={() => refBottomSheetInput.current?.expand()}
           >
-            Abrir con entrada de texto
+            Open with text input
+          </Button>
+
+          <Divider style={styles.divider} />
+
+          <Button
+            mode={'contained'}
+            onPress={() => refBottomSheetScroll.current?.expand()}
+          >
+            Open with scroll
           </Button>
         </View>
 
@@ -96,6 +107,7 @@ export default function App() {
           valueMax={valueDp2Max}
         />
         <InputBottomSheet ref={refBottomSheetInput} />
+        <ScrollBottomSheet ref={refBottomSheetScroll} />
       </GestureHandlerRootView>
     </PaperProvider>
   );

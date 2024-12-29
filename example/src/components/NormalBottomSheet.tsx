@@ -10,7 +10,7 @@ export default forwardRef(function (_: {}, ref: React.Ref<BottomSheetRef>) {
   return (
     <BottomSheet ref={ref}>
       <View style={styles.contentBottomSheet}>
-        <Text>Hello</Text>
+        <Text>Hello world!!</Text>
       </View>
     </BottomSheet>
   );

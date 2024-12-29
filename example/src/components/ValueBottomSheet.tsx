@@ -17,7 +17,7 @@ export default forwardRef(function (
   return (
     <BottomSheet ref={ref} height={Number(props.value)}>
       <View style={styles.contentBottomSheet}>
-        <Text>Hello</Text>
+        <Text>Hello world!!</Text>
       </View>
     </BottomSheet>
   );
