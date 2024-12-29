@@ -1,6 +1,6 @@
 {
   "name": "react-native-paper-bottom-sheet",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "React Native Paper Bottom Sheet",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
@@ -80,6 +80,10 @@
     "react": "18.3.1",
     "react-native": "0.76.5",
     "react-native-builder-bob": "^0.35.2",
+    "react-native-gesture-handler": "^2.21.2",
+    "react-native-paper": "^5.12.5",
+    "react-native-reanimated": "^3.16.6",
+    "react-native-safe-area-context": "^5.0.0",
     "release-it": "^17.10.0",
     "typescript": "^5.2.2"
   },
@@ -88,7 +92,11 @@
   },
   "peerDependencies": {
     "react": "*",
-    "react-native": "*"
+    "react-native": "*",
+    "react-native-gesture-handler": "*",
+    "react-native-paper": "*",
+    "react-native-reanimated": "*",
+    "react-native-safe-area-context": "*"
   },
   "workspaces": [
     "example"
@@ -122,37 +130,6 @@
         "preset": "angular"
       }
     }
-  },
-  "eslintConfig": {
-    "root": true,
-    "extends": [
-      "@react-native",
-      "prettier"
-    ],
-    "rules": {
-      "react/react-in-jsx-scope": "off",
-      "prettier/prettier": [
-        "error",
-        {
-          "quoteProps": "consistent",
-          "singleQuote": true,
-          "tabWidth": 2,
-          "trailingComma": "es5",
-          "useTabs": false
-        }
-      ]
-    }
-  },
-  "eslintIgnore": [
-    "node_modules/",
-    "lib/"
-  ],
-  "prettier": {
-    "quoteProps": "consistent",
-    "singleQuote": true,
-    "tabWidth": 2,
-    "trailingComma": "es5",
-    "useTabs": false
   },
   "react-native-builder-bob": {
     "source": "src",
@@ -188,6 +165,7 @@
       "ios": "ios/generated",
       "android": "android/generated"
     },
+    "includesGeneratedCode": true,
     "android": {
       "javaPackageName": "com.paperbottomsheet"
     }
@@ -196,5 +174,8 @@
     "languages": "js",
     "type": "library",
     "version": "0.45.5"
+  },
+  "optionalDependencies": {
+    "react-native-keyboard-controller": "^1.15.2"
   }
 }
